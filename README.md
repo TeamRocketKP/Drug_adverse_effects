@@ -10,12 +10,12 @@ The EDA file covers the Data wrangling, Data Cleaning, Data Visualization.
 
 Target columns : seriousness related columns like serious, seriousnessdeath, seriousnesshospitalization, seriouslifethreatening, seriousdisabling, seriouscongenitalanomoli.
 
-# Dataset:
+## Dataset:
 Data for this project is retrieved from OpenFDA website. OpenFDA is an Elastic search based API that serves public FDA data about drugs, devices, and foods.
 
 Data set is available under Human Drug tab. Data is available from 2003 , but we will be only working with the first three parts of the year 2022 data.
 
-# Data Cleaning:
+## Data Cleaning:
 As mentioned earlier data is collected from multiple locations, it contains numerous gaps and inconsistencies. It requires extensive cleaning in order to properly format it for analysis and generate accurate predictions.
 
 
@@ -31,7 +31,7 @@ Converting distinct values of age to age bins.
 Transforming generic names of drug dosage form to standard names.
 Transforming all drug dosage forms into a uniform name was a tedious task . Even a simple name such as “Tablet” had more than 50 variations, such as “pills,” “TAB,” “film-coated tab,” and “Chewable tablet.” Identifying all of these expressions using regular expressions proved to be challenging. As a result, it was necessary to manually inspect all of the variations and replace them with the correct standardized form.
 
-# Exploratory Data Analysis
+## Exploratory Data Analysis
 Through the data analysis we are trying to gain a deeper understanding of the values, identify patterns and trends, and visualize the distribution of the information.
 
 
@@ -43,7 +43,7 @@ In the case of adverse drug reactions (ADRs), it is crucial to identify the reac
 
 On the other hand, patients who receive injections have a higher probability of being in the hospital at the time of the reaction, which allows for immediate treatment and reduces the risk of adverse outcomes.
 
-*Modeling*
+## Modeling
 In the predictive modeling process, first the “serious” column was selected as the target feature. This column contains a binary value where 1 indicates that the patient experienced adverse effects of the drug resulting in hospitalization, life-threatening situations, disability, or death, while 0 represents no serious adverse effects.
 
 To perform the binary classification, a logistic regression model was employed, and after training and testing the model, it showed 100% accuracy, indicating low bias in the data and a risk of overfitting.
@@ -64,7 +64,7 @@ To give the model more data points to learn we can combine “life-threatening�
 Multi-class Confusion Matrix and report for Logistic regression model
 Logistic Regression model with four classes has increased the hospitalization and death class true positive results. But they are not significant. Over all accuracy is also increased by 2%.
 
-*Web Application using Flask*
+## Web Application using Flask
 For this project, you can also have an interactive web application to predict the seriousness of drug usage for different diseases. The front-end of the application is built using Streamlit, a Python library that allows developers to create attractive user interfaces with ease. The Flask server is used as the back-end to handle HTTP requests and responses and connect with SQL to store and access data from the dataset.
 
 
